@@ -2,11 +2,13 @@
 
 Authors: Goodrich, Tamassia, Godlwasser
 
+Note: Complete indicates that all unique reinforcement exercises were complete (also does not include trivial questions).
+
 ## Chapter Titles
 
-1. Python Primer
-1. Object-Oriented Programming
-1. Algorithm Analysis
+1. Python Primer (complete)
+1. Object-Oriented Programming (complete)
+1. Algorithm Analysis (complete)
 1. Recursion
 1. Array-Based Sequences
 1. Stacks, Queues, and Deques
