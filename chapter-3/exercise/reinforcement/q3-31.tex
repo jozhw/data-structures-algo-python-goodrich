@@ -1,0 +1,488 @@
+\documentclass{article}
+\usepackage{amsmath}  % for mathematical symbols and environments
+\usepackage{amsfonts} % for mathematical fonts
+\usepackage{amssymb}  % for additional mathematical symbols
+\usepackage[margin=1in]{geometry} % Set one inch margins
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage{enumitem}
+
+\renewcommand\thesection{Question \arabic{section}}
+\renewcommand\thesection{Question \arabic{section}}
+
+
+\titleformat{\subsection}[runin]{\large\bfseries}{}{0pt}{}[:]
+
+\begin{document}
+
+\title{Chapter 3: Algorithm Analysis | Questions 3-31}
+\author{J.Z.W}
+\date{November 10, 2023}
+
+\maketitle
+
+\setcounter{section}{2}
+
+% question 3
+\section{}
+
+The number of operations executed by algorithms A and B is \(40n^2\) and \(2n^3\),
+respectively. Determine \(n_0\) such that A is better than B for \(n \geq n_0\).
+
+\subsection{Answer}
+\begin{mdframed}
+
+Same answer as that of Question 2. Set the two functions equal to each other
+  and solve for \(n\). Simplified we have \(n = 20\). Thus for \(n \geq 20\), A
+  is better than B.
+
+\end{mdframed}
+
+% question 4
+\section{}
+
+Give an example of a function that is plotted the same on a \(log\)-\(log\) scale as it
+is on a standard scale.
+
+\subsection{Answer}
+\begin{mdframed}
+
+\begin{equation*}
+    f(n) = n
+\end{equation*}
+
+\end{mdframed}
+
+% question 5
+\section{}
+
+Explain why the plot of the function \(n^c\) is a straight line with the slope
+\(c\) on a \(log\)-\(log\) scale.
+
+\subsection{Answer}
+
+\begin{mdframed}
+  Given a power law equation \(y = an^c\), taking the log of the equation will result
+  in \(log(y) = log(an^c)\). Since a is a constant and given the logarithimic rules, \(logy =
+  clog(an)\). Thus, following the linear pattern \(y = mx+b\).
+
+\end{mdframed}
+
+% question 6
+\section{}
+
+What is the sum of all even numbers from \(0\) to \(2n\), for any positive integer \(n\)?
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+\begin{equation*}
+  sum = n(n + 1)
+\end{equation*}
+
+\end{mdframed}
+
+% question 7
+\section{}
+
+Show that the following two statements are equivalent:
+\begin{enumerate}[label=(\alph*)]
+  \item The running time of algorithm A is always \(O(f(n))\).
+  \item In the worst case, the running time of algorithm A is \(O(f(n))\).
+
+
+\end{enumerate}
+
+
+\subsection{Answer}
+
+\begin{mdframed}
+  Let \(A =\) the running time of algorithm A and let \(W =\) the worst running
+  time for algorithm A, be \(\in A\). \\ \\ If \(A \implies O(f(n))\), then \(\sim O(f(n))
+  \implies \sim A\). \\ \\
+  Therefore, \(W \implies O(f(n))\), because \(W \in A\). 
+
+\end{mdframed}
+
+
+% question 8
+\section{}
+
+Order the following functions: \\ 
+
+\(4nlog(n) + 2n; 3n + 100log(n); n^2 + 10n; 2^{10}; 4n; n^3; 2^{log(n)}; nlog(n)\)
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+\(2^{10} << 4n < 3n + 100log(n) << nlog(n) < 4nlog(n) + 2n << n^2 + 10n << n^3
+  << 2^{log(n)} << 2^n \)
+
+\end{mdframed}
+
+
+% question 9
+\section{}
+
+Show that if \(d(n) = O(f(n)) \implies ad(n) = O(f(n))\), for any constant
+\(a > 0\).
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  Since big O notation is an approximation, the focus are on the
+  significant growth factors. Thus, constants are usually ignored. Regardless,
+  we know that if \(d(n) =  O(f(n)) \implies ad(n) = O(f(an)) = O(f(n))\), because 
+  \(ad(n) \in d(n)\).
+
+
+\end{mdframed}
+
+
+% question 10
+\section{}
+
+Show that if \(d(n) = O(f(n))\) and \(ad(n) = O(f(n))\ \implies d(n)e(n) = O(f(n)g(n))\).
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  If \(f(n) \cdot e(n) = n^2 \implies O(n \cdot n) = O(n^2)\) or \(O(f(n)g(n))\)
+
+\end{mdframed}
+
+
+% question 11
+\section{}
+
+Show that if \(d(n) = O(f(n))\) and \(e(n) \in O(g(n)))\ \implies d(n) + e(n) = O(f(n) + g(n))\).
+
+\subsection{Answer}
+
+\begin{mdframed}
+  Let \(d(n) = n^2\) and \(e(n) = n\) \\ \\
+  \(O(d(n)) = n^2\) and \(O(e(n)) = n\)
+  \(d(n) + e(n) = n^2 + n \implies O(n^2 + n) = n^2 = O(n^2) + O(n)\)
+
+\end{mdframed}
+
+
+% question 12
+\section{}
+
+Show that if \(d(n) = O(f(n))\) and \(e(n) \in O(g(n)))\ \implies d(n) - e(n)\)
+is not necessarily \(  O(f(n) - g(n))\).
+
+\subsection{Answer}
+
+\begin{mdframed}
+  Let \(d(n) = 2n\) and \(e(n) = n\) \\ \\
+  If \(d(n) - e(n) = n \implies O(d(n) - e(n)) = O(n) \) \\ 
+  If \(d(n) = O(n) \) and \(e(n) = O(n) \implies O(d(n) - e(n)) = O(1) \neq O(d(n) - e(n))\)
+
+\end{mdframed}
+
+
+% question 13
+\section{}
+
+Show that if \(d(n) = O(f(n))\) and \(f(n) \in O(g(n)))\ \implies d(n) = O(g(n)\)
+
+\subsection{Answer}
+
+\begin{mdframed}
+  Let \(g(n) = n\) and \(f(n) = g(n)\) \\ \\
+  If \(d(n) = O(f(n))\) and \( O(f(n)) = O(g(n)) \implies d(n) = O(g(n)) \)
+
+\end{mdframed}
+
+
+% question 14
+\section{}
+
+Show that if \(O(max\{f(n), g(n)\}) = O(f(n) + g(n))\)
+
+\subsection{Answer}
+
+\begin{mdframed}
+  Let \(g(n) <<< f(n)\) \\ \\
+  \(max\{g(n), f(n)\} = f(n) \implies O(max\{f(n), g(n)\}) = O(f(n)) + O(g(n)) = O(f(n)) \) 
+
+\end{mdframed}
+
+
+
+% question 15
+\section{}
+
+Show that if \(f(n) = O(g(n)) \iff g(n) = \Omega(f(n)) \)
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  Firstly we must know that Big-\(\Omega\) is defined as being asymptotically less
+  than or equal to said function. Therefore if \(f(n) =  O(g(n))\), we know that
+  the estimated time complexity is \(f(n) = g(n)\), thus satisfying one of the
+  definitions of Big-\(\Omega\)
+
+\end{mdframed}
+
+
+% question 16
+\section{}
+
+Show that if \(p(n) \in n \in \mathbb{P} \implies log(p(n)) = O(log(n)) \)
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  Since we know \(p(n)\) is equivalent to \(n\), then \(log p(n) = log n\).
+  Therefore \(log p(n) = O(log(n))\) since \(log(n) = O(log(n))\)
+
+\end{mdframed}
+
+
+% question 17
+\section{}
+
+Show that \((n+1)^5 = O(n^5) \)
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  By defintion of Big-O, the highest polynomial would be \(cn^5\), thus being
+  \(O(n^5\)) time complexity
+
+\end{mdframed}
+
+
+% question 18
+\section{}
+
+Show that \(2^{n+1} = O(2^n) \)
+
+\subsection{Answer}
+
+\begin{mdframed}
+  
+  The addition of the constant in the exponent is negligible.
+
+\end{mdframed}
+
+
+% question 19
+\section{}
+
+Show that \(n = O(nlog(n)) \)
+
+\subsection{Answer}
+
+\begin{mdframed}
+  
+We know that big O is defined as the worst case, so even though it is more
+  accurate to say \(n = O(n)\), it is still true to say \(n = O(nlogn)\) because \(n <<
+  nlog(n)\)
+
+\end{mdframed}
+
+
+% question 20
+\section{}
+
+Show that \(n^2 = \Omega(nlog(n)) \)
+
+\subsection{Answer}
+
+\begin{mdframed}
+ 
+  By definition of Big-Omega, \(f(x) = \Omega(g(x)) || g(x))\) is asymptotically same or
+  lower as \((fx) || f(x) >= O(g(x))\)
+
+\end{mdframed}
+
+
+% question 21
+\section{}
+
+Same as the above
+
+
+
+% question 22
+\section{}
+
+Show that \(f(n) = O(f(n))\), if \(f(n)\) is a positive nondecreasing function
+that is always greater than 1.
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  Definition of big-\(O\), given the fact that \(f(n)\) is a positive
+  nondecreasing function
+
+\end{mdframed}
+
+
+% question 23
+\section{}
+
+Give the big-Oh characterization in terms of \(n\) for the running time of the
+code fragment 3.23.
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  \begin{equation*}
+    O(n)
+  \end{equation*}
+
+\end{mdframed}
+
+
+% question 24
+\section{}
+
+Give the big-Oh characterization in terms of \(n\) for the running time of the
+code fragment 3.24.
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  \begin{equation*}
+    O(log(n))
+  \end{equation*}
+
+\end{mdframed}
+
+
+% question 25
+\section{}
+
+Give the big-Oh characterization in terms of \(n\) for the running time of the
+code fragment 3.25.
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  \begin{equation*}
+    O(n^2)
+  \end{equation*}
+
+\end{mdframed}
+
+
+% question 26
+\section{}
+
+Give the big-Oh characterization in terms of \(n\) for the running time of the
+code fragment 3.26.
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  \begin{equation*}
+    O(n)
+  \end{equation*}
+
+\end{mdframed}
+
+
+% question 27
+\section{}
+
+Give the big-Oh characterization in terms of \(n\) for the running time of the
+code fragment 3.27.
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  \begin{equation*}
+    O(n^3)
+  \end{equation*}
+
+\end{mdframed}
+
+
+% question 28
+\section{}
+
+Calculate the largest size of \(n\) within a given time for each \(f(n)\)
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  Simply use the first value of \(f(n)\) and extrapolate
+
+\end{mdframed}
+
+
+% question 29
+\section{}
+
+Algorithm A executes at \(O(log(n))\) time complexity for each entry of an
+\(n\)-element sequence. What is its worst-case running time?
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  \(O(nlog(n))\) because it iterates through \(n\) and each element in \(n\)
+  takes \(O(log(n))\)
+
+\end{mdframed}
+
+
+% question 30
+\section{}
+
+Given a \(n\)-elment sequence \(S\), Algorithm B chooses \(log(n)\) elements in
+\(S\) at random and executes an \(O(n)\) time calculation for each. What is the
+worst-case running time for Algo B?
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  \(O(nlog(n))\) 
+
+
+\end{mdframed}
+
+% question 31
+\section{}
+
+Given a \(n\)-elment sequence \(S\) of integers, Algorithm C executes an
+\(O(n)\)-time calculation for each even number in \(S\), and an
+\(O(log(n))\)-time computation for each odd number in \(S\). What are the
+best-case and worst-case running times of Algo C?
+
+
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  For the best case, there are no odd numbers and thus \(O(n)\), but if there
+  are all odd numbers then \(O(nlog(n))\) would be the worst case.
+
+\end{mdframed}
+
+
+
+
+
+\end{document}
