@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath}  % for mathematical symbols and environments
+\usepackage{amsfonts} % for mathematical fonts
+\usepackage{amssymb}  % for additional mathematical symbols
+\usepackage[margin=1in]{geometry} % Set one inch margins
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage{enumitem}
+
+\renewcommand\thesection{Question \arabic{section}}
+\renewcommand\thesection{Question \arabic{section}}
+
+
+\titleformat{\subsection}[runin]{\large\bfseries}{}{0pt}{}[:]
+
+\begin{document}
+
+\title{Chapter 4: Recursion | Question 7}
+\author{J.Z.W}
+\date{November 29, 2023}
+
+\maketitle
+
+\setcounter{section}{6}
+
+% question 7
+\section{}
+
+Isabel has an interesting way of summing up the values in a sequence \(A\)
+of \(n\) integers, where \(n\) is a power of two. She creates a new sequence
+\(B\) of half the size of \(A\) and sets \(B[i] = A[2i + 1]\), for 
+\(i = 0, 1, ..., (n/2) - 1\). If \(B\) has size 1, then she outputs \(B[0]\).
+Otherwise, she replaces A with B, and repeats the process. What is the running
+time of her algorithm?
+
+\subsection{Answer}
+
+\begin{mdframed}
+
+  Given the fact that the algorithms requires the use of the entire input size,
+  the algorithm is at least \(O(n)\). Now for the entire input of \(A\) it is split
+  into two, \(n/2\) and for the two parts of \(A\), they are added, thus \(n/2\) addition
+  operations. Thus, the running time is \(O(n)\). 
+
+\end{mdframed}
+
+
+
+
+
+\end{document}

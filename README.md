@@ -9,7 +9,7 @@ Note: Complete indicates that all unique reinforcement exercises were complete (
 1. Python Primer (complete)
 1. Object-Oriented Programming (complete)
 1. Algorithm Analysis (complete)
-1. Recursion
+1. Recursion (complete)
 1. Array-Based Sequences
 1. Stacks, Queues, and Deques
 1. Linked Lists
