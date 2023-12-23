@@ -1,0 +1,5 @@
+Length:   0; Size in bytes:   56
+Length:   1; Size in bytes:   88
+Length:   5; Size in bytes:  120
+Length:   9; Size in bytes:  184
+Length:  17; Size in bytes:  256
