@@ -1,0 +1,6 @@
+R-5.5: Redo the justification of Proposition 5.1 assuming that the cost of growing the array
+from size k to size 2k is 3k cyber-dollars. How much should each append operation be charged to make the amortization work?
+
+Answer: In the case that the cost to resize the array is 3k cyber-dollars, the cost associated for growing the array
+would be 6 cyber dollars for the original pricing is 2^i cyber-dollars. Thus the total cost would be
+7: 6 for lengthening the array and 1 for the push operation.
