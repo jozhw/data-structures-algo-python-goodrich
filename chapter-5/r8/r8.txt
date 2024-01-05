@@ -1,0 +1,7 @@
+the pop method in python takes an argument that indicates the index of the
+value to be removed from the array. In the best case senario, the value at
+the end of the array is removed thus, having a O(1) time complexity.
+However at the worst case, the first value is removed, thus all of the values
+after must be reindexed. The time complexity of the pop method should be
+similar to that of the insert method. Overall the time complexity should be
+O(n - k - 1), which n is the length of the array and k is the index.
