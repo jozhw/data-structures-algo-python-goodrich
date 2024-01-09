@@ -1,0 +1,5 @@
+R-5.12: Describe how the bilt-in sum function can be combined with Python's
+comprehension syntax to compute the sum of all numbers in an n x n data
+set, respresented as a list of lists.
+
+simply: sum(sum(subset) for subset in data)
